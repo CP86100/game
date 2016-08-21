@@ -5,7 +5,7 @@ $(document).ready(function(){
     */
     
     //Game music looping for ever.
-    var gameTune = new Audio('sound/gameTune.mp3');
+    var gameTune = new Audio('./sound/gameTune.mp3');
     gameTune.addEventListener('ended',function(){
         gameTune.play();
     }, false);
