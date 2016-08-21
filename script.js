@@ -14,24 +14,39 @@ $(document).ready(function(){
     //images representing the character.
     var images = ['normLeft.png','breathLeft.png','walkLeft1.png','walkLeft2.png','normRight.png','breathRight.png','walkRight1.png','walkRight2.png','normUp.png','breathUp.png','walkUp1.png','walkUp2.png','normDown.png','breathDown.png','walkDown1.png','walkDown2.png'];
     //index pointing to the current image being displayed.
-    var index = 0;
+    var index = 4;
     
     //interval for the character's breathing when at rest.
     var breathInterval = setInterval(breath, 500);
     
     //Breating interval at work and character's movements.
     var keydown = false;
+    var previouskey = 0;
     $(document).keydown(function(key){
         
+        if(!keydown){
+            keydown = true;
+            previouskey = key.which;
+            setTimeout(function(){
+                keydown = false;
+            },150);
+        }
+        else if(previouskey != key.which){
+            keydown = false;
+        }
+        else{
+            return false;
+        }
+        
         clearInterval(breathInterval);
-
+        
         gameInput(key);
 
         breathInterval = setInterval(breath, 500);
 
 
     });
-    
+
     //function taking the game's input and making movements.
     function gameInput(key){
         
