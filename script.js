@@ -19,7 +19,7 @@ $(document).ready(function(){
                     index = 6;
                 }
                 $('#character').attr('src','./character/'+images[index]);
-                $('#character').animate({left: '+=10'}, 500);
+                $('#character').animate({left: '+=2'}, 0);
                 break;
             //Left Arrow pressed go left
             case 37:
@@ -33,7 +33,7 @@ $(document).ready(function(){
                     index = 2;
                 }
                 $('#character').attr('src','./character/'+images[index]);
-                $('#character').animate({left: '-=10'}, 500);
+                $('#character').animate({left: '-=2'}, 0);
                 break;
             //Up Arrow pressed go up
             case 38:
@@ -47,7 +47,7 @@ $(document).ready(function(){
                     index = 10;
                 }
                 $('#character').attr('src','./character/'+images[index]);
-                $('#character').animate({top: '+=10'}, 500);
+                $('#character').animate({top: '-=2'}, 0);
                 break;
             //Down Arrow pressed go down
             case 40:
@@ -61,7 +61,7 @@ $(document).ready(function(){
                     index = 14;
                 }
                 $('#character').attr('src','./character/'+images[index]);
-                $('#character').animate({top: '-=10'}, 500);
+                $('#character').animate({top: '+=10'}, 0);
                 break;
         }
         
